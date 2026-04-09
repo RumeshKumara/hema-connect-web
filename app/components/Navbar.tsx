@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     // Sticky site header with brand, nav links, and action buttons.
     <header className="sticky top-0 z-30 px-4 pt-5 sm:px-6">
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 rounded-full bg-[#f4f4f4] px-4 py-3  sm:px-8">
+      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 rounded-full bg-[#f4f4f4] px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.28)] sm:px-8">
         {/* Brand area with logo icon and home link. */}
         <div className="flex min-w-0 items-center gap-3 sm:gap-4">
           <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-[#e8e8e8] text-red-500">
