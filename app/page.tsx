@@ -48,13 +48,13 @@ export default function Home() {
   return (
     <div className="bg-[#ededee]">
       {/* Hero section with image overlay, headline, and primary actions. */}
-      <section className="relative top-0 overflow-hidden bg-black text-white">
+      <section className="relative top-0 min-h-screen overflow-hidden bg-black text-white">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/hero-image.png')" }}
         />
         <div className="absolute inset-0 bg-black/58" />
-        <div className="relative mx-auto flex min-h-140 w-full max-w-6xl flex-col items-center justify-center px-6 py-20 text-center md:min-h-155">
+        <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col items-center justify-center px-6 py-20 text-center md:py-24">
           <div className="rounded-full border border-red-500/80 bg-black/35 px-5 py-2 text-sm font-medium text-red-500 backdrop-blur-sm">
         ♡ Save Lives Today
           </div>

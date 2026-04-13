@@ -1,10 +1,23 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Primary navigation links used in desktop and mobile menus.
   const links = [
@@ -14,9 +27,13 @@ export default function Navbar() {
   ];
 
   return (
-    // Sticky site header with brand, nav links, and action buttons.
-    <header className="sticky top-0 z-30 px-4 pt-5 sm:px-6">
-      <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 rounded-full bg-[#f4f4f4] px-4 py-2.5 shadow-[0_12px_30px_rgba(0,0,0,0.28)] sm:px-8">
+    // Fixed site header with brand, nav links, and action buttons.
+    <header className="fixed left-0 right-0 top-0 z-30 px-4 pt-3 sm:px-6">
+      <nav
+        className={`mx-auto flex w-full items-center justify-between gap-3 rounded-full bg-[#f4f4f4] px-4 py-2.5 shadow-[0_12px_30px_rgba(0,0,0,0.28)] transition-all duration-300 ease-out sm:px-8 ${
+          isScrolled ? "max-w-6xl" : "max-w-7xl"
+        }`}
+      >
         {/* Brand area with logo icon and home link. */}
         <div className="flex min-w-0 items-center gap-3 sm:gap-4">
           <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-[#e8e8e8] text-red-500">
