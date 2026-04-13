@@ -55,7 +55,7 @@ export default function Navbar() {
         </div>
 
         {/* Desktop navigation links with active state styling. */}
-        <div className="ml-auto hidden items-center gap-8 md:flex">
+        <div className="ml-auto hidden items-center gap-2 md:flex">
           {links.map((link) => {
             const isActive = pathname === link.href;
 
@@ -63,8 +63,11 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-base leading-none font-medium transition ${
-                  isActive ? "text-red-500" : "text-[#232323] hover:text-red-500"
+                aria-current={isActive ? "page" : undefined}
+                className={`rounded-full px-5 py-2.5 text-base leading-none font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#ffd8d8] ${
+                  isActive
+                    ? "bg-[#ececec] text-red-600"
+                    : "text-[#232323] hover:bg-red-50/70 hover:text-red-500"
                 }`}
               >
                 {link.label}
@@ -111,7 +114,12 @@ export default function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`transition ${isActive ? "text-red-500" : "hover:text-red-500"}`}
+              aria-current={isActive ? "page" : undefined}
+              className={`rounded-full px-3 py-1.5 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#f4f4f4] ${
+                isActive
+                  ? "bg-red-50 text-red-600"
+                  : "text-[#232323] hover:bg-red-50/70 hover:text-red-500"
+              }`}
             >
               {link.label}
             </Link>
