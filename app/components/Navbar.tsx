@@ -28,9 +28,9 @@ export default function Navbar() {
 
   return (
     // Fixed site header with brand, nav links, and action buttons.
-    <header className="fixed left-0 right-0 top-0 z-30 px-4 pt-3 sm:px-6">
+    <header className="fixed left-0 right-0 top-0 z-30 px-4 pt-4 sm:px-6">
       <nav
-        className={`mx-auto flex w-full items-center justify-between gap-3 rounded-full bg-[#f4f4f4] px-4 py-2.5 shadow-[0_12px_30px_rgba(0,0,0,0.28)] transition-all duration-300 ease-out sm:px-8 ${
+        className={`mx-auto flex w-full items-center justify-between gap-3 rounded-full border-l-3 border-red-500 bg-[#f4f4f4] px-4 py-2.5 shadow-[0_12px_30px_rgba(0,0,0,0.28)] transition-all duration-300 ease-out sm:px-8 ${
           isScrolled ? "max-w-6xl" : "max-w-7xl"
         }`}
       >
