@@ -90,7 +90,7 @@ export default function Home() {
             className={`py-3 ${index > 0 ? "border-t border-zinc-300 sm:border-t-0 sm:border-l" : ""}`}
           >
             <p className="text-5xl font-bold text-red-500">{stat.value}</p>
-            <p className="mt-2 text-4xl font-medium text-zinc-700">{stat.label}</p>
+            <p className="mt-2 text-2xl font-medium text-zinc-700">{stat.label}</p>
           </div>
         ))}
       </section>
