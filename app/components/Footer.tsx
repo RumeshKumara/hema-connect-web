@@ -6,7 +6,7 @@ export default function Footer() {
 
   return (
     // Footer with brand, copyright, and spacer for desktop alignment.
-    <footer className=" border-t-2 border-red-500 bg-white px-4 py-8 sm:px-6">
+    <footer className=" border-t-1 border-red-500 bg-white px-4 py-8 sm:px-6">
       <div className="mx-auto grid w-full max-w-7xl items-center gap-5 md:grid-cols-[1fr_auto_1fr]">
         {/* Brand block linking back to home page. */}
         <Link href="/" className="flex items-center gap-3 justify-self-start">
